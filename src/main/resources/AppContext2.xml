@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="animals" class="com.prvg.SpringLegacyDemo.Animals" 
+		init-method="init" destroy-method="destroy">
+		<property name="animalList">
+			<list>
+				<value>Dog</value>
+				<value>Cat</value>
+				<value>Fox</value>
+			</list>
+		</property>
+
+		<property name="animalMap">
+			<map>
+				<entry key="Dog" value="Woof"/>
+				<entry key="Cat" value="Meow"/>
+				<entry key="Bird" value="Chirp"/>
+			</map>
+		</property>
+	</bean>
+	
+	<bean id="drinks" class="com.prvg.SpringLegacyDemo.Drinks">
+		<property name="drinksCoke" ref="DrinksCoke"/>
+		<property name="drinksPepsi" ref="DrinksPepsi"/>
+	</bean>
+	
+	<bean id="outerDrinks" class="com.prvg.SpringLegacyDemo.Drinks">
+		<property name="drinksCoke">
+			<bean id="innerCoke" class="com.prvg.SpringLegacyDemo.DrinksCoke"/>
+		</property>
+	</bean>
+	
+	<bean id="drinksCon" class="com.prvg.SpringLegacyDemo.Drinks">
+		<constructor-arg name="dCoke" ref="DrinksCoke"/>
+		<constructor-arg  name="dPepsi" ref="DrinksPepsi"/>
+	</bean>
+	
+	<bean id="DrinksCoke" class="com.prvg.SpringLegacyDemo.DrinksCoke"/>
+	<bean id="DrinksPepsi" class="com.prvg.SpringLegacyDemo.DrinksPepsi"/>
+	
+</beans>

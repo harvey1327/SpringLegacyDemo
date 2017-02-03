@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="mealAWByType" class="com.prvg.SpringLegacyDemo.aw.Meal" autowire="byType"/>
+	<bean id="mealAWByName" class="com.prvg.SpringLegacyDemo.aw.Meal" autowire="byName"/>
+	<bean id="mealAWByCons" class="com.prvg.SpringLegacyDemo.aw.Meal" autowire="constructor"/>
+	
+	<bean id="fruitaw" class="com.prvg.SpringLegacyDemo.aw.Fruitaw">
+		<property name="myName" value="Apple"/>
+	</bean>
+	<bean id="vegetableaw" class="com.prvg.SpringLegacyDemo.aw.Vegetableaw">
+		<property name="myName" value="pepper"/>
+	</bean>
+	
+</beans>
