@@ -27,6 +27,7 @@ public class ASpringLegacyDemo {
 		((FileSystemXmlApplicationContext)  appContext).close();
 	}
 	
+	@SuppressWarnings("unused")
 	private static void nonAutoWire(){
 		ApplicationContext appContext = new FileSystemXmlApplicationContext("AppContext.xml");
 		
